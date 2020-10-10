@@ -16,7 +16,7 @@ void NBADatabase::removeStats(int y)
 {
 	std::list<Result> :: iterator iter;
 
-   	for(iter=stats.begin();iter!=stats.end();++iter)
+   	for(iter=stats.begin();iter!=stats.end();iter++)
     	{
         	if(iter->getYear()== y)
         	{
