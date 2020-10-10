@@ -16,7 +16,7 @@ void NBADatabase::removeStats(int y)
 {
 	std::list<Result> :: iterator iter;
 
-   	for(iter=stats.begin();iter!=stats.end();iter++)
+   	for(iter=stats.begin();iter!=stats.end();++iter)
     	{
         	if(iter->getYear()== y)
         	{
@@ -30,7 +30,7 @@ Result* NBADatabase::findStatsByYear(int y)
 {
 	std::list<Result> :: iterator iter;
 
-   	for(iter=stats.begin();iter!=stats.end();iter++)
+   	for(iter=stats.begin();iter!=stats.end();++iter)
     	{
         	if(iter->getYear()== y)
         	{
@@ -45,7 +45,7 @@ int NBADatabase::countMvpbyTeams(std::string m_Team)
 	std::list<Result> :: iterator iter;
 	int countMVPs=0;
 
-   	for(iter=stats.begin();iter!=stats.end();iter++)
+   	for(iter=stats.begin();iter!=stats.end();++iter)
     	{
         	if(iter->getmvpTeam()== m_Team)
         	{
@@ -60,7 +60,7 @@ int NBADatabase::countWestChampionshipsForTeam(std::string w_Champ)
 	std::list<Result> :: iterator iter;
 	int countWins=0;
 
-   	for(iter=stats.begin();iter!=stats.end();iter++)
+   	for(iter=stats.begin();iter!=stats.end();++iter)
     	{
         	if(iter->getWestChampion()== w_Champ)
         	{
@@ -75,7 +75,7 @@ int NBADatabase::countEastChampionshipsForTeam(std::string e_Champ)
 	std::list<Result> :: iterator iter;
 	int countWins=0;
 
-   	for(iter=stats.begin();iter!=stats.end();iter++)
+   	for(iter=stats.begin();iter!=stats.end();++iter)
     	{
         	if(iter->getEastChampion()== e_Champ)
         	{
