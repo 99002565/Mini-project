@@ -11,9 +11,5 @@ result.o : result.cpp NBA.h result.h
 	g++ $< -c    
 NBA.o : NBA.cpp NBA.h
 	g++ $< -c
-valgrind.o : ./all.out
-	valgrind ./all.out
-cppcheck: *.cpp
-	cppcheck *.cpp
 clean:
 	rm -rf *.o *.out
