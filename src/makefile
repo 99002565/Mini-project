@@ -4,7 +4,9 @@ src/NBA.cpp\
 src/result_test.cpp\
 src/result.cpp
 
-TEST_OUTPUT = build/all.out
+BUILD= build
+
+TEST_OUTPUT = $(BUILD)/all.out
 
 all: all.out
 all.out : NBA.o NBA_db.o result.o result_test.o NBA_db_test.o
