@@ -18,4 +18,4 @@ jobs:
     - name: make test
       run:  make
     - name: Unit Test
-      run:  chmod 777 all.out  
+      run:  chmod 777 ./all.out  
