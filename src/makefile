@@ -1,3 +1,11 @@
+TEST_SRC=src/NBA_db.cpp\
+src/NBA_db_test.cpp\
+src/NBA.cpp\
+src/result_test.cpp\
+src/result.cpp
+
+TEST_OUTPUT = build/all.out
+
 all: all.out
 all.out : NBA.o NBA_db.o result.o result_test.o NBA_db_test.o
 	g++ $^ -o $@ -lgtest -lgtest_main -lpthread
@@ -11,6 +19,9 @@ result.o : result.cpp NBA.h result.h
 	g++ $< -c    
 NBA.o : NBA.cpp NBA.h
 	g++ $< -c
+test:$(BUILD)
+	gcc $(TEST_SRC) -o $(TEST_OUTPUT) -lcunit
+	./$(TEST_OUTPUT)	
 valgrind.o : ./all.out
 	valgrind ./all.out
 cppcheck: *.cpp
