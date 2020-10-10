@@ -19,5 +19,5 @@ jobs:
         sudo apt-get -y install libcunit1 libcunit1-doc libcunit1-dev 
     - name: make test
       run: |
-        chmod a+x src/all.out
+        make test -C src
         valgrind ./src/all.out
